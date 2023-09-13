@@ -1,5 +1,6 @@
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.EOFException;
 import java.net.Socket;
 import java.util.Scanner;
 
@@ -26,8 +27,10 @@ public class MyClient {
             }
             dos.close();
             s.close();
-        }catch(Exception e){
-            System.out.println(e);
+        }catch(EOFException e){
+            System.out.println("exited successfully");
+        }catch (Exception e){
+            System.out.println();
         }
     }
 }
